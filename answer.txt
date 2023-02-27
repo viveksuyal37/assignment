@@ -1,0 +1,55 @@
+Ans1) output will be ---->
+
+40
+NaN
+-----------------------------------------------------
+explanation: we have a circle object which has a radius property and two methods (diameter and perimeter).
+
+when we call diameter method (circle.diameter()), this method returned this.radius *2.
+
+since it is a normal function so here this keyword is refering to circle object itself. Therfore its returned value is (circle.radius * 2)=40. 
+
+In perimeter function, as it is a arrow function so there this keyword will refer to the global object(in node) and the returned statement will be evaluated as return 2 * (pi value) * {};
+
+so multiplying any number with the object will give Nan(not a number).
+
+In browser this inside a arrow function will refer to window object.
+
+
+Ans 2)
+
+
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1; //since it uses indexes same like array.
+let year = date.getFullYear();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+
+let formatedDate =
+  day + "-" + month + "-" + year + " " + hours + ":" + minutes + ":" + seconds;
+
+console.log(formatedDate);
+
+
+Ans 3)
+
+all required imports here..
+
+
+function App() {
+
+    const input=useRef()
+
+useEffect(()=>{
+  input.current.focus() 
+},[])
+
+return(
+    <div>
+         <input type="text" ref={input} ></input>
+    </div>
+)
+}
